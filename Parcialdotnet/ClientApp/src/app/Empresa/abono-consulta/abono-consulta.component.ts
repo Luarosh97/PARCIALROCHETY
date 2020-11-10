@@ -11,18 +11,29 @@ import { AbonoRegistriComponent } from '../abono-registri/abono-registri.compone
 })
 export class AbonoConsultaComponent implements OnInit {
   abonos: Abono[];
-  searchText: string;
+  
   totalAyudas:string;
   constructor(private abonoService: AbonoService,private modalService: NgbModal) { }
 
   ngOnInit() {
   }
   Consultar(){
-    this.abonoService.Consultar("Consulta").subscribe(result => {
+    this.abonoService.Consultar('Consulta').subscribe(result => {
       this.abonos = result;
       this.abonos = this.abonos;
     });
+    this.abonoService.Totalizar('TotalAyudas').subscribe(totalAyudas => {
+      this.totalAyudas = +this.SepararPorComas(totalAyudas) + '.00';
+    });
+
     
+  }
+
+  SepararPorComas(valor): any {
+    while (/(\d+)(\d{3})/.test(valor.toString())) {
+      valor = valor.toString().replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
+    }
+    return valor;
   }
   openModalManipulador()
   {

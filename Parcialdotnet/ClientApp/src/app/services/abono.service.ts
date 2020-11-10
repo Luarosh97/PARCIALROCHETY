@@ -14,7 +14,7 @@ export class AbonoService {
     @Inject('BASE_URL') baseUrl: string,
     private handleErrorService: HandleHttpErrorService) { }
 
-    Consultar(formulario: Abono): Observable<Abono[]> {
+    Consultar(formulario: string): Observable<Abono[]> {
       return this.http.get<Abono[]>(this.baseUrl + 'api/Abono/' + formulario).pipe (
         tap(_ => this.handleErrorService.log('Datos enviados exitosamente')),
         catchError(this.handleErrorService.handleError<Abono[]>('Consulta Abono',null))
@@ -26,6 +26,13 @@ export class AbonoService {
           tap(_ => this.handleErrorService.log('datos enviados')),
           catchError(this.handleErrorService.handleError<Abono>('Registrar Abono', null))
         );
+    }
+
+    Totalizar(formulario: string): Observable<number> {
+      return this.http.get<number>(this.baseUrl + 'api/Abono/' + formulario).pipe (
+        tap(_ => this.handleErrorService.log('Datos enviados exitosamente')),
+        catchError(this.handleErrorService.handleError<number>('Totalizar Abonose',null))
+      );
     }
 
 }

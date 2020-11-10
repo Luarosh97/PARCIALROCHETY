@@ -14,4 +14,4 @@ export class Mensajes {
             messageBox.componentInstance.message = mensaje;
       }
 }
-}
+

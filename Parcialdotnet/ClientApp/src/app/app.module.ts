@@ -20,6 +20,7 @@ import { AbonoRegistriComponent } from './Empresa/abono-registri/abono-registri.
 import { AbonoConsultaComponent } from './Empresa/abono-consulta/abono-consulta.component';
 import { CreditoService } from './services/credito.service';
 import { AbonoService } from './services/abono.service';
+import { FiltroPersonaPipe } from './pipe/filtro-persona.pipe';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AbonoService } from './services/abono.service';
     CreditoRegistroComponent,
     CredotoConsultaComponent,
     AbonoRegistriComponent,
-    AbonoConsultaComponent
+    AbonoConsultaComponent,
+    FiltroPersonaPipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

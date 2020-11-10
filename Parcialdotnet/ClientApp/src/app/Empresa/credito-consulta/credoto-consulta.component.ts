@@ -19,16 +19,15 @@ export class CredotoConsultaComponent implements OnInit {
   }
 
   Consultar(){
-    this.creditoService.Consultar("Consulta").subscribe(result => {
+    this.creditoService.get().subscribe(result => {
       this.creditos = result;
       this.creditos = this.creditos;
     });
-    
-  }
+    }
   openModalManipulador()
   {
     this.modalService.open(CreditoRegistroComponent, { size: 'xl' });
   }
 }
 
-}
+
