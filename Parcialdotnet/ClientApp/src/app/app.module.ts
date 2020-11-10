@@ -16,6 +16,8 @@ import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CreditoRegistroComponent } from './Empresa/credito-registro/credito-registro.component';
 import { CredotoConsultaComponent } from './Empresa/credito-consulta/credoto-consulta.component';
+import { AbonoRegistriComponent } from './Empresa/abono-registri/abono-registri.component';
+import { AbonoConsultaComponent } from './Empresa/abono-consulta/abono-consulta.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { CredotoConsultaComponent } from './Empresa/credito-consulta/credoto-con
     EncabezadoComponent,
     AlertModalComponent,
     CreditoRegistroComponent,
-    CredotoConsultaComponent
+    CredotoConsultaComponent,
+    AbonoRegistriComponent,
+    AbonoConsultaComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -43,7 +47,7 @@ import { CredotoConsultaComponent } from './Empresa/credito-consulta/credoto-con
     ]),
     AppRoutingModule
   ],
-  entryComponents:[AlertModalComponent],
+  entryComponents:[AlertModalComponent,CreditoRegistroComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

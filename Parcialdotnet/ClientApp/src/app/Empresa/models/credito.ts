@@ -1,4 +1,7 @@
+
+
 export class Credito {
+
     identificacion: string;
     nombre: string;
     cantidadEmp: number;
