@@ -10,7 +10,7 @@ namespace DAL
       
       }
       public DbSet <Credito> Creditos {get;set;}
-      public DbSet <Abono> abonos {get;set;}
+      public DbSet <Abono> Abonos {get;set;}
 
     }
 }
