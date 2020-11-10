@@ -1,1 +1,63 @@
-<p>credoto-consulta works!</p>
+<div class="cuerpo">
+    <div class="container contenido">
+        
+            <p class="tituloContainer"><i class="fas fa-paw"></i>CONSULTA DE CREDITOS</p><br>
+            <div class="row">
+            <button class="btn-azul" (click)="openModalManipulador()">
+                <i class="fas fa-plus-circle"></i> Agregar Credito</button><br><br>
+            <div class="col-md-4">
+                <div class="col-md-12">
+                    <button class="btn btn-secondary btn-block" form="consulta" (click)="Consultar()"><i
+                            class="fas fa-search"></i> Consultar</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form" id="consulta">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label class="control-label">Total Saldo Credito:</label>
+                            <input type="text" readonly id="txtTotalAyudas" name="txtTotalAyudas"
+                                [(ngModel)]="totalAyudas" class="form-control"
+                                placeholder="Cantidad total de Creditos">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form" id="filtro">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label class="control-label">Filtrar por Nombres o Id:</label>
+                            <input type="text" id="txtfiltroPersona" name="txtfiltroPersona" [(ngModel)]="searchText"
+                                class="form-control" placeholder="Digite aquí su búsqueda">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <table class="table table-striped" *ngIf='creditos && creditos.length'>
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">identificación</th>
+                    <th scope="col">Nombre </th>
+                    <th scope="col">Cantida Empleados</th>
+                    <th scope="col">Valor Activo</th>
+                    <th scope="col">Valor Credito</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let Credito of creditos |filtroPersona:searchText; index as i "
+                    (click)="seleccionar(persona)">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{ Credito.identificacion }} </td>
+                    <td>{{ Credito.nombre }}</td>
+                    <td>{{ Credito.cantidadEmp }}</td>
+                    <td>{{ Credito.valorActivo }}</td>
+                    <td>{{ Credito.valorCredito}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

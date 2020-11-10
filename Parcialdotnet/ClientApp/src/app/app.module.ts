@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -15,7 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CreditoRegistroComponent } from './Empresa/credito-registro/credito-registro.component';
-import { CredotoConsultaComponent } from './Empresa/credoto-consulta/credoto-consulta.component';
+import { CredotoConsultaComponent } from './Empresa/credito-consulta/credoto-consulta.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +35,7 @@ import { CredotoConsultaComponent } from './Empresa/credoto-consulta/credoto-con
     HttpClientModule,
     NgbModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
