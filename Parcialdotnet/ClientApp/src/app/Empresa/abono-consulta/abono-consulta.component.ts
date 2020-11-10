@@ -13,15 +13,13 @@ export class AbonoConsultaComponent implements OnInit {
   abonos: Abono[];
   
   totalAyudas:string;
-  constructor(private abonoService: AbonoService,private modalService: NgbModal) { }
+  constructor(private abonoService: AbonoService) { }
 
   ngOnInit() {
   }
   Consultar(){
     this.abonoService.Consultar().subscribe(result => {
-      this.abonos = result;
-      this.abonos = this.abonos;
-    });
+      this.abonos = result; });
     }
 
   

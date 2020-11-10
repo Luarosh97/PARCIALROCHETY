@@ -15,24 +15,29 @@ export class AbonoRegistriComponent implements OnInit {
   formGroup: FormGroup;
   submitted = false;
   // tslint:disable-next-line:max-line-length
-  constructor(private abonoservice: AbonoService,private formBuilder: FormBuilder,private mensaje:Mensajes) { }
+  constructor(private abonoservice: AbonoService,private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.buildForm();
   }
+  
   buildForm() {
-    this.Abono.idAbono = '';
+    this.Abono=new Abono();
+    this.Abono.idAbono= '';
     this.Abono.fecha= '';
     this.Abono.valorAbono= 0;
     
 
     this.formGroup = this.formBuilder.group({
       // tslint:disable-next-line:max-line-length
-      fecha: [this.Abono.fecha, [Validators.required,Validators.minLength(2)]],
-      idAbono: [this.Abono.idAbono, [Validators.required,Validators.minLength(2)]],
+      
+      idAbono: [this.Abono.idAbono, [Validators.required]],
+      fecha: [this.Abono.fecha, [Validators.required]],
       valorAbono: [this.Abono.valorAbono, [Validators.required]],
       });
   }
+
+
   get control() {
     return this.formGroup.controls;
   }
@@ -49,7 +54,7 @@ export class AbonoRegistriComponent implements OnInit {
     this.Abono = this.formGroup.value;
     this.abonoservice.post(this.Abono).subscribe(p => {
       if (p != null) {
-        this.mensaje.Mostrar('¡Operación exitosa!');
+        alert("Abono Creado");
         this.Abono= p;
       }
     });

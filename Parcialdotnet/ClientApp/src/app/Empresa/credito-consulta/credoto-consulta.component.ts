@@ -13,7 +13,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class CredotoConsultaComponent implements OnInit {
   creditos: Credito[];
   searchText: string;
-  totalAyudas:string;
+  
   constructor(private creditoService: CreditoService,private modalService: NgbModal) { }
 
   ngOnInit() {
@@ -22,7 +22,7 @@ export class CredotoConsultaComponent implements OnInit {
   Consultar(){
     this.creditoService.get().subscribe(result => {
       this.creditos = result;
-      this.creditos = this.creditos;
+      
     });
     }
   
