@@ -35,9 +35,6 @@ export class AbonoConsultaComponent implements OnInit {
     }
     return valor;
   }
-  openModalManipulador()
-  {
-    this.modalService.open(AbonoRegistriComponent, { size: 'xl' });
-  }
+  
 
 }

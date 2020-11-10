@@ -11,11 +11,7 @@ namespace Parcialdotnet.Models
         
         public decimal ValorAbono { get; set; }
         
-        public Credito Credito { get; set; }
-
-        public AbonoInputModel() {
-            Credito = new Credito();
-        }
+        public string Idabono {get;set;}
     }
 
     public class AbonoViewModel: AbonoInputModel
@@ -26,7 +22,7 @@ namespace Parcialdotnet.Models
             Fecha = abono.Fecha;
             ValorAbono = abono.ValorAbono;
             
-            Credito= abono.credito;
+            Idabono=abono.Idabono;
         }
     }
     

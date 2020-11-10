@@ -11,11 +11,13 @@ using DAL;
 using System;
 
 namespace Parcialdotnet.Controllers
-{
+{   
+    [Route("api/[controller]")]
+   [ApiController]
     public class CreditoController:ControllerBase
     {
         private readonly CreditoService _creditoService;
-
+       
         public CreditoController(EmpresaContext context)
         {
             

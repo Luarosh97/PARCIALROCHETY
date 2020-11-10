@@ -19,7 +19,7 @@ namespace BLL
             try
             {
                 
-                var abonobuscado = _context.Abonos.Find(abono.credito.Identificacion);
+                var abonobuscado = _context.Abonos.Find(abono.Idabono);
                 if(abonobuscado   != null){
                     return new GuardarAbonoResponse("Error el abono Ya se encuentra registrada");
                 }

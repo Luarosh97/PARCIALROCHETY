@@ -43,6 +43,10 @@ import { FiltroPersonaPipe } from './pipe/filtro-persona.pipe';
     HttpClientModule,
     NgbModule,
     FormsModule,
+    AbonoRegistriComponent,
+    CreditoRegistroComponent,
+
+
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -51,7 +55,7 @@ import { FiltroPersonaPipe } from './pipe/filtro-persona.pipe';
     ]),
     AppRoutingModule
   ],
-  entryComponents:[AlertModalComponent,CreditoRegistroComponent,AbonoRegistriComponent],
+  entryComponents:[AlertModalComponent],
   providers: [CreditoService,AbonoService],
   bootstrap: [AppComponent]
 })

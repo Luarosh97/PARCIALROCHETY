@@ -1,8 +1,9 @@
+import { CreditoRegistroComponent } from './../credito-registro/credito-registro.component';
 import { Credito } from './../models/credito';
 import { Component, OnInit } from '@angular/core';
 import { CreditoService } from 'src/app/services/credito.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { CreditoRegistroComponent } from '../credito-registro/credito-registro.component';
+
 
 @Component({
   selector: 'app-credoto-consulta',
@@ -24,10 +25,7 @@ export class CredotoConsultaComponent implements OnInit {
       this.creditos = this.creditos;
     });
     }
-  openModalManipulador()
-  {
-    this.modalService.open(CreditoRegistroComponent, { size: 'xl' });
-  }
+  
 }
 
 

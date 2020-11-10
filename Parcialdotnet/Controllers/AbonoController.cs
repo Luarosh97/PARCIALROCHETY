@@ -72,6 +72,7 @@ namespace Parcialdotnet.Controllers
             {
                 Fecha = abonoInput.Fecha,
                 ValorAbono = abonoInput.ValorAbono,
+                IdAbono=abonoImput.Idabono
                 
             };
             return abono;

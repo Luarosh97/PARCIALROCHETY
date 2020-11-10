@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace ENTITY
 {
@@ -9,12 +10,11 @@ namespace ENTITY
         public string Fecha { get; set; }
 
         public decimal ValorAbono { get; set; }
+         
+          [Key]
+        public string Idabono { get; set; }
 
-        public Credito credito { get; set; }
-
-        public Abono() {
-            credito = new Credito();
-        }
+        
 
     }
 }
