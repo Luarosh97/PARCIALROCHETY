@@ -14,6 +14,8 @@ import { EncabezadoComponent } from './encabezado/encabezado.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CreditoRegistroComponent } from './Empresa/credito-registro/credito-registro.component';
+import { CredotoConsultaComponent } from './Empresa/credoto-consulta/credoto-consulta.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FetchDataComponent,
     FooterComponent,
     EncabezadoComponent,
-    AlertModalComponent
+    AlertModalComponent,
+    CreditoRegistroComponent,
+    CredotoConsultaComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
