@@ -22,7 +22,7 @@ namespace BLL
                 
                 var creditobuscado = _context.Creditos.Find(credito.Identificacion);
                 if(creditobuscado  != null){
-                    return new GuardarPersonaResponse("Error La Persona Ya se encuentra registrada");
+                    return new GuardarPersonaResponse("Error El credito Ya se encuentra registrada");
                 }
                  _context.Creditos.Add(credito);
                 _context.SaveChanges();

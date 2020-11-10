@@ -14,7 +14,7 @@ using System;
 namespace Parcialdotnet.Controllers
 {
 
-     [Route("api/[controller]")]
+     [Route("api/[Abono]")]
     [ApiController]
     public class AbonoController :ControllerBase
     {

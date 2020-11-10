@@ -15,7 +15,7 @@ export class AbonoService {
     private handleErrorService: HandleHttpErrorService) { }
 
     Consultar(): Observable<Abono[]> {
-      return this.http.get<Abono[]>(this.baseUrl + 'api/Credito')
+      return this.http.get<Abono[]>(this.baseUrl + 'api/Abono')
         .pipe(tap(_ => this.handleErrorService.log('datos enviados')),
           catchError(this.handleErrorService.handleError<Abono[]>('Consulta Credito', null))
         );
