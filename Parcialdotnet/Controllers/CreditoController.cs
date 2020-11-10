@@ -26,10 +26,10 @@ namespace Parcialdotnet.Controllers
         }
 
          [HttpGet]
-        public IEnumerable<CreditoViewModel>GetAll()
+        public IEnumerable <CreditoViewModel> GetAll()
         {
-            var personas = _creditoService.ConsultarTodos().Select(p=> new CreditoViewModel(p));
-            return personas;
+            var creditos = _creditoService.ConsultarTodos().Select(p=> new CreditoViewModel(p));
+            return creditos;
         }
 
          [HttpPost]

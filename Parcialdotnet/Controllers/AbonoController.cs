@@ -14,8 +14,8 @@ using System;
 namespace Parcialdotnet.Controllers
 {
 
-    [Route("api/[controller]")]
-   [ApiController]
+     [Route("api/[controller]")]
+    [ApiController]
     public class AbonoController :ControllerBase
     {
         private readonly AbonoService _abonoService;
@@ -28,31 +28,16 @@ namespace Parcialdotnet.Controllers
 
         }
 
-        [HttpGet("{formulario}")]
-        public object SeleccionarConsulta(string formulario)
+       
+        
+         [HttpGet]
+        public IEnumerable <AbonoViewModel> GetAll()
         {
-            if (formulario == "Consulta")
-            {
-                return GetAll();
-            }
-            else
-            {
-                return TotalizarAbonos();
-            }
-            
+            var creditos = _abonoService.ConsultarTodos().Select(p=> new AbonoViewModel(p));
+            return creditos;
         }
-
-        public int TotalizarAbonos()
-        {
-            return _abonoService.TotalizarAbonos();
-            
-        }
-
-        private IEnumerable<AbonoViewModel> GetAll()
-        {
-            var abonos = _abonoService.ConsultarTodos().Select(p=> new AbonoViewModel(p));
-            return abonos;
-        }
+        
+         
 
          [HttpPost]
         public ActionResult<AbonoViewModel> Post(AbonoInputModel abonoInput)
@@ -72,7 +57,7 @@ namespace Parcialdotnet.Controllers
             {
                 Fecha = abonoInput.Fecha,
                 ValorAbono = abonoInput.ValorAbono,
-                IdAbono=abonoImput.Idabono
+                Idabono =abonoInput.Idabono,
                 
             };
             return abono;

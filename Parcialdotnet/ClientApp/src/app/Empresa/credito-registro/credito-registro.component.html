@@ -5,7 +5,7 @@
         <div class="modal-header">
           <h2>Registro de Personas</h2>
         </div>
-
+        <div class="modal-body">
         <form [formGroup]="formGroup">
           <div class="form-group">
             <label>Identificacion</label>
@@ -35,7 +35,7 @@
           <div class="form-group">
             <label>Cantidad Empleados</label>
             <input type="number" name="cantidadEmp" formControlName="cantidadEmp" class="form-control"
-              [ngClass]="{ 'is-invalid':  control.edad.errors}" />
+              [ngClass]="{ 'is-invalid':  control.cantidadEmp.errors}" />
             <div *ngIf="control.cantidadEmp.errors" class="invalid-feedback">
               <div *ngIf="control.cantidadEmp.errors.required">Se requiere el campo cantidad </div>
 
@@ -44,7 +44,7 @@
           <div class="form-group">
             <label>Valor Activo</label>
             <input type="number" name="valorActivo" formControlName="valorActivo" class="form-control"
-              [ngClass]="{ 'is-invalid':  control.edad.errors}" />
+              [ngClass]="{ 'is-invalid':  control.valorActivo.errors}" />
             <div *ngIf="control.valorActivo.errors" class="invalid-feedback">
               <div *ngIf="control.valorActivo.errors.required">Se requiere el campo ValorActivo</div>
 
@@ -54,7 +54,7 @@
           <div class="form-group">
             <label>Valor Credito</label>
             <input type="number" name="valorCredito" formControlName="valorCredito" class="form-control"
-              [ngClass]="{ 'is-invalid':  control.edad.errors}" />
+              [ngClass]="{ 'is-invalid':  control.valorCredito.errors}" />
             <div *ngIf="control.valorCredito.errors" class="invalid-feedback">
               <div *ngIf="control.valorCredito.errors.required">Se requiere el campo Valor Del Credito</div>
 
@@ -69,7 +69,7 @@
           </div>
 
         </form>
-
+      </div>
 
 
 

@@ -18,23 +18,13 @@ export class AbonoConsultaComponent implements OnInit {
   ngOnInit() {
   }
   Consultar(){
-    this.abonoService.Consultar('Consulta').subscribe(result => {
+    this.abonoService.Consultar().subscribe(result => {
       this.abonos = result;
       this.abonos = this.abonos;
     });
-    this.abonoService.Totalizar('TotalAyudas').subscribe(totalAyudas => {
-      this.totalAyudas = +this.SepararPorComas(totalAyudas) + '.00';
-    });
-
-    
-  }
-
-  SepararPorComas(valor): any {
-    while (/(\d+)(\d{3})/.test(valor.toString())) {
-      valor = valor.toString().replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
     }
-    return valor;
-  }
+
+  
   
 
 }

@@ -21,7 +21,7 @@ export class AbonoRegistriComponent implements OnInit {
     this.buildForm();
   }
   buildForm() {
-    this.Abono = new Abono();
+    this.Abono.idAbono = '';
     this.Abono.fecha= '';
     this.Abono.valorAbono= 0;
     
@@ -29,6 +29,7 @@ export class AbonoRegistriComponent implements OnInit {
     this.formGroup = this.formBuilder.group({
       // tslint:disable-next-line:max-line-length
       fecha: [this.Abono.fecha, [Validators.required,Validators.minLength(2)]],
+      idAbono: [this.Abono.idAbono, [Validators.required,Validators.minLength(2)]],
       valorAbono: [this.Abono.valorAbono, [Validators.required]],
       });
   }

@@ -14,11 +14,11 @@ export class AbonoService {
     @Inject('BASE_URL') baseUrl: string,
     private handleErrorService: HandleHttpErrorService) { }
 
-    Consultar(formulario: string): Observable<Abono[]> {
-      return this.http.get<Abono[]>(this.baseUrl + 'api/Abono/' + formulario).pipe (
-        tap(_ => this.handleErrorService.log('Datos enviados exitosamente')),
-        catchError(this.handleErrorService.handleError<Abono[]>('Consulta Abono',null))
-      );
+    Consultar(): Observable<Abono[]> {
+      return this.http.get<Abono[]>(this.baseUrl + 'api/Credito')
+        .pipe(tap(_ => this.handleErrorService.log('datos enviados')),
+          catchError(this.handleErrorService.handleError<Abono[]>('Consulta Credito', null))
+        );
     }
     post(persona: Abono): Observable<Abono> {
       return this.http.post<Abono>(this.baseUrl + 'api/Abono', persona)
@@ -28,11 +28,6 @@ export class AbonoService {
         );
     }
 
-    Totalizar(formulario: string): Observable<number> {
-      return this.http.get<number>(this.baseUrl + 'api/Abono/' + formulario).pipe (
-        tap(_ => this.handleErrorService.log('Datos enviados exitosamente')),
-        catchError(this.handleErrorService.handleError<number>('Totalizar Abonose',null))
-      );
-    }
+    
 
 }
