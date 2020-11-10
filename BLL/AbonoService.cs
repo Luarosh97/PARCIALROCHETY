@@ -23,6 +23,7 @@ namespace BLL
                 if(abonobuscado   != null){
                     return new GuardarAbonoResponse("Error el abono Ya se encuentra registrada");
                 }
+                   TotalizarAbonos();
                  _context.Abonos.Add(abono);
                 _context.SaveChanges();
                 
@@ -35,6 +36,11 @@ namespace BLL
                 return new GuardarAbonoResponse($"Error de la Aplicacion: {e.Message}");
             }
             
+        }
+
+        public int TotalizarAbonos()
+        {
+           return _context.Creditos.Count();
         }
 
         public List<Abono> ConsultarTodos()
