@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ylvHszb2cJkOFQqvNq1kSAMpitbBNFU5ckUj5RVJqIE75qwgzrfiaNhM3T2ErBG2cLYDiTn2uqguM7KKpmRnOw==",
+  "success": true,
+  "projectFilePath": "E:\\Parcial 2\\ENTITY\\ENTITY.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Rochety\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
