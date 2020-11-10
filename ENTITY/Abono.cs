@@ -4,9 +4,17 @@ namespace ENTITY
 {
     public class Abono
     {
-
-        public string Id {get;set}
-        public decimal ValorAbono{ get; set;}
+       
+        
         public string Fecha { get; set; }
+
+        public decimal ValorAbono { get; set; }
+
+        public Credito credito { get; set; }
+
+        public Abono() {
+            credito = new Credito();
         }
+
+    }
 }
