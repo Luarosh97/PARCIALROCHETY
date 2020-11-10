@@ -2,32 +2,30 @@ import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HandleHttpErrorService } from '../@base/handle-http-error.service';
-import { Credito } from '../Empresa/models/credito';
+import { Abono } from '../Empresa/models/abono';
 import { tap, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CreditoService {
+export class AbonoService {
   baseUrl: string;
   constructor(private http: HttpClient,
     @Inject('BASE_URL') baseUrl: string,
     private handleErrorService: HandleHttpErrorService) { }
 
-    Consultar(formulario: Credito): Observable<Credito[]> {
-      return this.http.get<Credito[]>(this.baseUrl + 'api/Credito/' + formulario).pipe (
+    Consultar(formulario: Abono): Observable<Abono[]> {
+      return this.http.get<Abono[]>(this.baseUrl + 'api/Abono/' + formulario).pipe (
         tap(_ => this.handleErrorService.log('Datos enviados exitosamente')),
-        catchError(this.handleErrorService.handleError<Credito[]>('Consulta Credito',null))
+        catchError(this.handleErrorService.handleError<Abono[]>('Consulta Abono',null))
       );
     }
-    post(persona: Credito): Observable<Credito> {
-      return this.http.post<Credito>(this.baseUrl + 'api/Credito', persona)
+    post(persona: Abono): Observable<Abono> {
+      return this.http.post<Abono>(this.baseUrl + 'api/Abono', persona)
         .pipe(
           tap(_ => this.handleErrorService.log('datos enviados')),
-          catchError(this.handleErrorService.handleError<Credito>('Registrar Credito', null))
+          catchError(this.handleErrorService.handleError<Abono>('Registrar Abono', null))
         );
     }
-
-  
 
 }
