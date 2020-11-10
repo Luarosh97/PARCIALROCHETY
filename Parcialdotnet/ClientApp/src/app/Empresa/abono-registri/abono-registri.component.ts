@@ -15,7 +15,7 @@ export class AbonoRegistriComponent implements OnInit {
   formGroup: FormGroup;
   submitted = false;
   // tslint:disable-next-line:max-line-length
-  constructor(private abonoservice: AbonoService,private formBuilder: FormBuilder,public activeModal: NgbActiveModal,private mensaje:Mensajes) { }
+  constructor(private abonoservice: AbonoService,private formBuilder: FormBuilder,private mensaje:Mensajes) { }
 
   ngOnInit() {
     this.buildForm();

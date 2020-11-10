@@ -43,8 +43,7 @@ import { FiltroPersonaPipe } from './pipe/filtro-persona.pipe';
     HttpClientModule,
     NgbModule,
     FormsModule,
-    AbonoRegistriComponent,
-    CreditoRegistroComponent,
+    
 
 
     ReactiveFormsModule,

@@ -16,7 +16,7 @@ export class CreditoRegistroComponent implements OnInit {
   formGroup: FormGroup;
   submitted = false;
   // tslint:disable-next-line:max-line-length
-  constructor(private creditoService: CreditoService,private formBuilder: FormBuilder,public activeModal: NgbActiveModal,private mensaje:Mensajes) { 
+  constructor(private creditoService: CreditoService,private formBuilder: FormBuilder,private mensaje:Mensajes) { 
 }
 
     
