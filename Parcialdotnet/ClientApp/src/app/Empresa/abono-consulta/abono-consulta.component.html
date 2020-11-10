@@ -1,1 +1,61 @@
-<p>abono-consulta works!</p>
+<div class="cuerpo">
+    <div class="container contenido">
+        
+            <p class="tituloContainer"><i class="fas fa-paw"></i>CONSULTA DE ABONOS</p><br>
+            <div class="row">
+            <button class="btn-azul" (click)="openModalManipulador()">
+                <i class="fas fa-plus-circle"></i> Agregar Agregar Abonos</button><br><br>
+            <div class="col-md-4">
+                <div class="col-md-12">
+                    <button class="btn btn-secondary btn-block" form="consulta" (click)="Consultar()"><i
+                            class="fas fa-search"></i> Consultar</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form" id="consulta">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label class="control-label">Total de abonos:</label>
+                            <input type="text" readonly id="txtTotalAyudas" name="txtTotalAyudas"
+                                [(ngModel)]="totalAyudas" class="form-control"
+                                placeholder="Cantidad total de Creditos">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form" id="filtro">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label class="control-label">Filtrar por Id:</label>
+                            <input type="text" id="txtfiltroPersona" name="txtfiltroPersona" [(ngModel)]="searchText"
+                                class="form-control" placeholder="Digite aquí su búsqueda">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <table class="table table-striped" *ngIf='abono && abonos.length'>
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">idCredito</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Valor Abono</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let abono of abonos |filtroPersona:searchText; index as i "
+                    (click)="seleccionar(persona)">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{ abono.idCredito}} </td>
+                    <td>{{ abono.fecha}}</td>
+                    
+                    <td>{{ abono.valorAbono }}</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

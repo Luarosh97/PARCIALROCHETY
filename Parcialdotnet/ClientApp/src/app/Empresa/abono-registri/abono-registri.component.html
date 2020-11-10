@@ -7,17 +7,7 @@ body>
           </div>
           <div class="modal-body">
             <form [formGroup]="formGroup">
-              <div class="form-group">
-                <label>Identificacion</label>
-                <input type="text" name="idCredito" formControlName="idCredito" class="form-control"
-                  [ngClass]="{ 'is-invalid':  control.idCredito.errors}" />
-                <div *ngIf="control.idCredito.errors" class="invalid-feedback">
-                  <div *ngIf="control.idCredito.errors.required">Se requiere la identificacion </div>
-                  <div *ngIf="control.idCredito.errors.pattern">solo se aceptan numeros </div>
-                  <div *ngIf="control.idCredito.errors.minlength">Debe tener minimo 7 caracteres </div>
-                  
-                </div>
-              </div>
+              
             <div class="form-group">
                 <label>Fecha del Abono</label>
                 <input type="text" name="fecha" formControlName="fecha" class="form-control"
@@ -28,7 +18,7 @@ body>
                 </div>
               </div>
   
-<div class="form-group">
+               <div class="form-group">
                 <label>Valor Abono</label>
                 <input type="number" name="valorAbono" formControlName="valorAbono" class="form-control"
                   [ngClass]="{ 'is-invalid':  control.valorAbono.errors}" />
@@ -42,7 +32,7 @@ body>
   
               <div class="text-center">
                 <button class="btn btn-primary mr-1" (click)="onSubmit()"
-                  [disabled]="formGroup.invalid">Registrar</button>
+                  [disabled]="formGroup.invalid">RegistrarAbono</button>
                 <button class="btn btn-secondary" type="reset">Cancel</button>
               </div>
   

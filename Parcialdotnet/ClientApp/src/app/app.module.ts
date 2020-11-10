@@ -18,6 +18,8 @@ import { CreditoRegistroComponent } from './Empresa/credito-registro/credito-reg
 import { CredotoConsultaComponent } from './Empresa/credito-consulta/credoto-consulta.component';
 import { AbonoRegistriComponent } from './Empresa/abono-registri/abono-registri.component';
 import { AbonoConsultaComponent } from './Empresa/abono-consulta/abono-consulta.component';
+import { CreditoService } from './services/credito.service';
+import { AbonoService } from './services/abono.service';
 
 @NgModule({
   declarations: [
@@ -47,8 +49,8 @@ import { AbonoConsultaComponent } from './Empresa/abono-consulta/abono-consulta.
     ]),
     AppRoutingModule
   ],
-  entryComponents:[AlertModalComponent,CreditoRegistroComponent],
-  providers: [],
+  entryComponents:[AlertModalComponent,CreditoRegistroComponent,AbonoRegistriComponent],
+  providers: [CreditoService,AbonoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
