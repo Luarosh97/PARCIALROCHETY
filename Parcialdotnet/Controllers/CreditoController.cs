@@ -12,7 +12,7 @@ using System;
 
 namespace Parcialdotnet.Controllers
 {   
-  [Route("api/[Credito]")]
+  [Route("api/[Controller]")]
    [ApiController]
     public class CreditoController:ControllerBase
     {

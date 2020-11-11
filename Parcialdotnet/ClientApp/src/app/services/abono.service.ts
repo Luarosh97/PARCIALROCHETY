@@ -12,7 +12,9 @@ export class AbonoService {
   baseUrl: string;
   constructor(private http: HttpClient,
     @Inject('BASE_URL') baseUrl: string,
-    private handleErrorService: HandleHttpErrorService) { }
+    private handleErrorService: HandleHttpErrorService) {
+      this.baseUrl = baseUrl;
+     }
 
     Consultar(): Observable<Abono[]> {
       return this.http.get<Abono[]>(this.baseUrl + 'api/Abono')

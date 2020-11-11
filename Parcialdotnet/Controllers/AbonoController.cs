@@ -14,7 +14,7 @@ using System;
 namespace Parcialdotnet.Controllers
 {
 
-     [Route("api/[Abono]")]
+     [Route("api/[Controller]")]
     [ApiController]
     public class AbonoController :ControllerBase
     {
@@ -33,8 +33,8 @@ namespace Parcialdotnet.Controllers
          [HttpGet]
         public IEnumerable <AbonoViewModel> GetAll()
         {
-            var creditos = _abonoService.ConsultarTodos().Select(p=> new AbonoViewModel(p));
-            return creditos;
+            var abonos = _abonoService.ConsultarTodos().Select(p=> new AbonoViewModel(p));
+            return abonos;
         }
         
          

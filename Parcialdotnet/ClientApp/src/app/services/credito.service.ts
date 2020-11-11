@@ -13,7 +13,9 @@ export class CreditoService {
   baseUrl: string;
   constructor(private http: HttpClient,
     @Inject('BASE_URL') baseUrl: string,
-    private handleErrorService: HandleHttpErrorService) { }
+    private handleErrorService: HandleHttpErrorService) {
+      this.baseUrl = baseUrl;
+     }
 
     get(): Observable<Credito[]> {
       return this.http.get<Credito[]>(this.baseUrl + 'api/Credito')
