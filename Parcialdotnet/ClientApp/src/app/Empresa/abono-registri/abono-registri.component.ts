@@ -15,7 +15,7 @@ export class AbonoRegistriComponent implements OnInit {
   formGroup: FormGroup;
   submitted = false;
   // tslint:disable-next-line:max-line-length
-  constructor(private abonoservice: AbonoService,private formBuilder: FormBuilder) { }
+  constructor(private abonoservice: AbonoService,private formBuilder: FormBuilder,private mensajes :Mensajes) { }
 
   ngOnInit() {
     this.buildForm();
@@ -50,11 +50,11 @@ export class AbonoRegistriComponent implements OnInit {
     }
     this.add();
   }
-  add() {
+  add(){
     this.Abono = this.formGroup.value;
     this.abonoservice.post(this.Abono).subscribe(p => {
       if (p != null) {
-        alert("Abono Creado");
+       this.mensajes.Mostrar("Operacion Exitosa");
         this.Abono= p;
       }
     });

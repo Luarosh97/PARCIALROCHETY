@@ -1,8 +1,9 @@
+import { AbonoRegistriComponent } from './../abono-registri/abono-registri.component';
 import { AbonoService } from './../../services/abono.service';
 import { Component, OnInit } from '@angular/core';
 import { Abono } from '../models/abono';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { AbonoRegistriComponent } from '../abono-registri/abono-registri.component';
+
 
 @Component({
   selector: 'app-abono-consulta',
@@ -12,17 +13,17 @@ import { AbonoRegistriComponent } from '../abono-registri/abono-registri.compone
 export class AbonoConsultaComponent implements OnInit {
   abonos: Abono[];
   
-  totalAyudas:string;
-  constructor(private abonoService: AbonoService) { }
+  
+  constructor(private abonoService: AbonoService,private modalService: NgbModal) { }
 
   ngOnInit() {
-  }
-  Consultar(){
-    this.abonoService.Consultar().subscribe(result => {
+    this.abonoService.get().subscribe(result => {
       this.abonos = result; });
-    }
 
-  
-  
-
+  }
+  openModalManipulador()
+  {
+    this.modalService.open(AbonoRegistriComponent, { size: 'xl' });
+  }
+ 
 }

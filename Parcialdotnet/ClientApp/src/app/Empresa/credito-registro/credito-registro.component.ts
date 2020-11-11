@@ -55,10 +55,10 @@ export class CreditoRegistroComponent implements OnInit {
   }
   add() {
     this.credito = this.formGroup.value;
-    this.creditoService.post(this.credito).subscribe(p => {
-      if (p != null) {
-        this.mensaje.Mostrar('¡Operación exitosa!');
-        this.credito= p;
+    this.creditoService.post(this.credito).subscribe(c => {
+      if (c != null) {
+        this.mensaje.Mostrar("Operacion Exitosa");
+        this.credito = c;
       }
     });
   }

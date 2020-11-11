@@ -25,6 +25,7 @@ namespace Parcialdotnet
         {
              var connectionString=Configuration.GetConnectionString ("DefaultConnection");
             services.AddDbContext<EmpresaContext>(p=> p.UseSqlServer(connectionString));
+            
             services.AddControllersWithViews();
              //Agregar OpenApi Swagger
             services.AddSwaggerGen(c =>

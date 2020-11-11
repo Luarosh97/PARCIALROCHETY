@@ -31,7 +31,7 @@
             </div>
             <div class="form-group">
               <label>Cantidad</label>
-              <input type="text" name="cantidadEmp" formControlName="cantidadEmp" class="form-control"
+              <input type="number" name="cantidadEmp" formControlName="cantidadEmp" class="form-control"
                 [ngClass]="{ 'is-invalid':  control.cantidadEmp.errors}" />
               <div *ngIf="control.cantidadEmp.errors" class="invalid-feedback">
                 <div *ngIf="control.cantidadEmp.errors.required">Se requiere el nombre </div>
@@ -40,7 +40,7 @@
             </div>
             <div class="form-group">
               <label>Valor</label>
-              <input type="text" name="valorActivo" formControlName="valorActivo" class="form-control"
+              <input type="number" name="valorActivo" formControlName="valorActivo" class="form-control"
                 [ngClass]="{ 'is-invalid':  control.valorActivo.errors}" />
               <div *ngIf="control.valorActivo.errors" class="invalid-feedback">
                 <div *ngIf="control.valorActivo.errors.required">Se requiere el nombre </div>
@@ -48,21 +48,15 @@
               </div>
             </div>
             <div class="form-group">
-              <label>Valor</label>
-              <input type="text" name="valorCredito" formControlName="valorCredito" class="form-control"
+              <label>Valor Credito</label>
+              <input type="number" name="valorCredito" formControlName="valorCredito" class="form-control"
                 [ngClass]="{ 'is-invalid':  control.valorCredito.errors}" />
               <div *ngIf="control.valorCredito.errors" class="invalid-feedback">
                 <div *ngIf="control.valorCredito.errors.required">Se requiere el nombre </div>
                 <div *ngIf="control.valorCredito.errors.minlength">Debe tener minimo 4 caracteres</div>
               </div>
             </div>
-
-
-            
-            
-
-
-            <div class="text-center">
+           <div class="text-center">
               <button class="btn btn-primary mr-1" (click)="onSubmit()"
                 [disabled]="formGroup.invalid">Registrar</button>
               <button class="btn btn-secondary" type="reset">Cancel</button>

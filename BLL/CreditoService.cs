@@ -15,25 +15,25 @@ namespace BLL
         {
             _context = contexto;
         }
-         public GuardarPersonaResponse Guardar(Credito credito)
+         public GuardarCreditoResponse Guardar(Credito credito)
         {
             try
             {
                 
                 var creditobuscado = _context.Creditos.Find(credito.Identificacion);
                 if(creditobuscado  != null){
-                    return new GuardarPersonaResponse("Error El credito Ya se encuentra registrada");
+                    return new GuardarCreditoResponse("Error El credito Ya se encuentra registrada");
                 }
                  _context.Creditos.Add(credito);
                 _context.SaveChanges();
                 
                 
-                return new GuardarPersonaResponse(credito);
+                return new GuardarCreditoResponse(credito);
             }
            
             catch (Exception e)
             {
-                return new GuardarPersonaResponse($"Error de la Aplicacion: {e.Message}");
+                return new GuardarCreditoResponse($"Error de la Aplicacion: {e.Message}");
             }
             
         }
@@ -44,14 +44,14 @@ namespace BLL
             return creditos;
         }
     }
-    public class GuardarPersonaResponse 
+    public class GuardarCreditoResponse 
     {
-        public GuardarPersonaResponse(Credito credito)
+        public GuardarCreditoResponse(Credito credito)
         {
             Error = false;
             Credito= credito;
         }
-        public GuardarPersonaResponse(string mensaje)
+        public GuardarCreditoResponse(string mensaje)
         {
             Error = true;
             Mensaje = mensaje;

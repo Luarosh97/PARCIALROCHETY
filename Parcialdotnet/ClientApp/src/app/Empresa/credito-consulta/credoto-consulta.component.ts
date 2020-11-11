@@ -17,14 +17,15 @@ export class CredotoConsultaComponent implements OnInit {
   constructor(private creditoService: CreditoService,private modalService: NgbModal) { }
 
   ngOnInit() {
-  }
-
-  Consultar(){
     this.creditoService.get().subscribe(result => {
-      this.creditos = result;
-      
-    });
+      this.creditos = result;});
+
+  
     }
+    openModalManipulador()
+  {
+    this.modalService.open(CreditoRegistroComponent, { size: 'xl' });
+  }
   
 }
 

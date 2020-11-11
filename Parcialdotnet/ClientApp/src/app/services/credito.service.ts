@@ -23,14 +23,12 @@ export class CreditoService {
           catchError(this.handleErrorService.handleError<Credito[]>('Consulta Credito', null))
         );
     }
-    post(credito: Credito): Observable<Credito> {
+    post(credito:Credito): Observable<Credito> {
       return this.http.post<Credito>(this.baseUrl + 'api/Credito', credito)
         .pipe(
           tap(_ => this.handleErrorService.log('datos enviados')),
           catchError(this.handleErrorService.handleError<Credito>('Registrar Credito', null))
         );
-    }
+    }}
 
-    
-
-  }
+  

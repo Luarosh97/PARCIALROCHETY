@@ -30,7 +30,7 @@
             </div>
             <div class="form-group">
               <label>Valor Abono</label>
-              <input type="text" name="valorAbono" formControlName="valorAbono" class="form-control"
+              <input type="number" name="valorAbono" formControlName="valorAbono" class="form-control"
                 [ngClass]="{ 'is-invalid':  control.valorAbono.errors}" />
               <div *ngIf="control.valorAbono.errors" class="invalid-feedback">
                 <div *ngIf="control.valorAbono.errors.required">Se requiere el nombre </div>

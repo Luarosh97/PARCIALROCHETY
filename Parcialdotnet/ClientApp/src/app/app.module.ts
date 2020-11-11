@@ -54,7 +54,7 @@ import { FiltroPersonaPipe } from './pipe/filtro-persona.pipe';
     ]),
     AppRoutingModule
   ],
-  entryComponents:[AlertModalComponent],
+  entryComponents:[AlertModalComponent,AbonoConsultaComponent,AbonoRegistriComponent,CreditoRegistroComponent,CredotoConsultaComponent],
   providers: [CreditoService,AbonoService],
   bootstrap: [AppComponent]
 })

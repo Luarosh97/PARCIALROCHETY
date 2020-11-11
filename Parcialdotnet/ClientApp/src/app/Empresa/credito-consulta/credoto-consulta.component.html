@@ -2,8 +2,10 @@
     <div class="container contenido">
         
             <p class="tituloContainer"><i class="fas fa-paw"></i>CONSULTA DE CREDITOS</p><br>
-            <div class="row">
+            <div class="row"><br>
             
+                <button class="btn-azul" (click)="openModalManipulador()">
+                    <i class="fas fa-plus-circle"></i> Agregar  Credito</button><br><br>
             
             
             <div class="col-md-4">
@@ -32,7 +34,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let Credito of creditos |filtroPersona:searchText; index as i "
-                    (click)="seleccionar(persona)">
+                    (click)="seleccionar(Credito)">
                     <th scope="row">{{ i + 1 }}</th>
                     <td>{{ Credito.identificacion }} </td>
                     <td>{{ Credito.nombre }}</td>
